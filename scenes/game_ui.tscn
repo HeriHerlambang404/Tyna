@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://cntull5lypt7u"]
+
+[ext_resource type="Script" uid="uid://dg3ealpkn38bw" path="res://script/game_ui.gd" id="1_yubou"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i0n7b"]
+font_size = 40
+
+[node name="GameUI" type="CanvasLayer" unique_id=728148943]
+process_mode = 3
+script = ExtResource("1_yubou")
+
+[node name="ClockLabel" type="Label" parent="." unique_id=2125345370]
+offset_left = 1041.0
+offset_top = 32.0
+offset_right = 1083.0
+offset_bottom = 55.0
+text = "06:00"
+metadata/_edit_use_anchors_ = true
+
+[node name="FadeScreen" type="ColorRect" parent="." unique_id=1253364665]
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 1167.0
+offset_bottom = 660.0
+color = Color(0, 0, 0, 0)
+
+[node name="SleepPopup" type="Panel" parent="." unique_id=1657546735]
+visible = false
+offset_left = 388.0
+offset_top = 228.0
+offset_right = 945.0
+offset_bottom = 497.0
+scale = Vector2(0.657725, 0.657725)
+
+[node name="Label" type="Label" parent="SleepPopup" unique_id=161200558]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 10.0
+offset_right = 496.0
+offset_bottom = 149.0
+text = "Mau Tidur?"
+label_settings = SubResource("LabelSettings_i0n7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="yes" type="Button" parent="SleepPopup" unique_id=370314438]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 156.0
+offset_right = 182.0
+offset_bottom = 224.0
+text = "YA"
+
+[node name="no" type="Button" parent="SleepPopup" unique_id=930134600]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 156.0
+offset_right = 520.0
+offset_bottom = 224.0
+text = "TIDAK"
+
+[node name="HotbarUI" type="HBoxContainer" parent="." unique_id=347387890]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -107.0
+offset_right = 70.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 5
+
+[node name="ColorRect" type="ColorRect" parent="HotbarUI" unique_id=1390578634]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.24831942, 0.24831942, 0.24831942, 0.8862745)
+
+[node name="ColorRect2" type="ColorRect" parent="HotbarUI" unique_id=163206081]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.24831942, 0.24831942, 0.24831942, 0.8862745)
+
+[node name="ColorRect3" type="ColorRect" parent="HotbarUI" unique_id=890168362]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.24831942, 0.24831942, 0.24831942, 0.8862745)
+
+[node name="ColorRect4" type="ColorRect" parent="HotbarUI" unique_id=1051847806]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.24831942, 0.24831942, 0.24831942, 0.8862745)
+
+[node name="ColorRect5" type="ColorRect" parent="HotbarUI" unique_id=533116123]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0.24831942, 0.24831942, 0.24831942, 0.8862745)
+
+[node name="BackpackUI" type="ColorRect" parent="." unique_id=1416919417]
+visible = false
+offset_left = 362.0
+offset_top = 98.0
+offset_right = 762.0
+offset_bottom = 398.0
+color = Color(0.18284217, 0.18284217, 0.18284217, 1)
+
+[connection signal="pressed" from="SleepPopup/yes" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="SleepPopup/no" to="." method="_on_no_button_pressed"]
